@@ -127,6 +127,8 @@ For all the versions I have seen so far the above should be all you need to get 
 
 #### IF YOU WANT TO GET SNAP.CGI AND MJPEG.CGI WORKING:
 
+(THERE'S AN ALTERNATE WAY TO SEARCH FOR 00 08 02 00 : see https://github.com/guino/BazzDoorbell/issues/2#issuecomment-739664241)
+
 Click the middle window and then CTRL+HOME to get back up to the top of the listing, then press CTRL+SHIFT+E (search) enter **pps_media_md_get_pic** make sure 'all fields' is selected and click 'next'. When it finds a match look at the right side, you're looking for a function that looks like the below (if it's not the same keep clicking 'next' until you find the one that looks like this):
 
 ![jpgaddr](https://raw.githubusercontent.com/guino/ppsapp-rtsp/main/img/jpgaddr.png)
