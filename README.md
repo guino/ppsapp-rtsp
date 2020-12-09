@@ -9,7 +9,7 @@ I'm not going to go into details on installing/running ghidra (you can google th
 Once you open ghidra, click File->New Project... select 'non-shared project', hit next and select a location to save the project (anywhere you like) and the project name like 'ppsapp' then click 'finish'.
 
 Click on Tools->Run Tool->Code Browser -- a new window will open.
-Click on File->Import File an select the ppsapp file you want to modify, leave default settings in the window and click 'ok'.
+Click on File->Import File an select the ppsapp file you want to modify, leave default settings in the window and click 'ok' (if your language setting is blank select ARM v7 little endian).
 Click 'YES' when asked to analyze it now.
 On the list on the left select 'ARM aggressive instruction finder' and leave the rest untouched, click 'analyze'.
 
