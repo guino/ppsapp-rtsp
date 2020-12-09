@@ -23,6 +23,7 @@ At that point at the top of the middle window (assembly listing) you should see 
 Write that value highlighted in green for later -- it usually is 0x10000.
 
 Now let's search for the main function: press CTRL+SHIFT+E and enter **ipc_ring** in the box, then select 'all fields' at the bottom and hit 'next'.
+(There's an alternate way to find the main sub but ghidra sometimes doesn't follow it right: on the initial page look for **_start** in the middle window and double click that, then double click on the LAB_0xxxxx in the __uClibc_main() function -- if you find the main sub this way you can skip to the part after the picture of the main sub)
 
 The very first match should have something like this on the right side:
 
