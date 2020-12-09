@@ -11,7 +11,7 @@ Once you open ghidra, click File->New Project... select 'non-shared project', hi
 Click on Tools->Run Tool->Code Browser -- a new window will open.
 Click on File->Import File an select the ppsapp file you want to modify, leave default settings in the window and click 'ok' (if your language setting is blank select ARM v7 little endian).
 Click 'YES' when asked to analyze it now.
-On the list on the left select 'ARM aggressive instruction finder' and leave the rest untouched, click 'analyze'.
+On the list on the left select 'ARM aggressive instruction finder' and leave the rest as-is, click 'analyze'.
 
 This may take a few minutes (depending on your machine), you should see a progress bar on the bottom right as it analyzes the file, when it's done there will no longer be a progress bar at the bottom.
 
