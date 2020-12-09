@@ -119,7 +119,7 @@ We're going to replace the call for our initEchoShow function, so right click th
 
 ![addedcall2](https://raw.githubusercontent.com/guino/ppsapp-rtsp/main/img/addedcall2.png)
 
-There's no harm in leaving the parameters intact (they're just going to be ignored). So now we path the file at the address of that function call: 93528 - 10000 = 83528
+There's no harm in leaving the parameters intact (they're just going to be ignored). So now we go back to the hex editor and patch the file at the address of that function call: 93528 - 10000 = 83528 (file offset)
 
 Again CHECK the bytes before/after the address to verify they match and change the bytes to make them match the middle window in this case change **20 DC** for **71 FC** and save.
 
@@ -142,14 +142,14 @@ for each memory block marked with 'rw' search for JPEG signature JFIF, then sear
 #### ONLY IF YOU WANT TO PLAY WITH STREAMER-ARM
 To find the address for streamer-arm:
 Click the middle window and then CTRL+HOME to get back up to the top of the listing, then press CTRL+SHIFT+E (search) enter **ipc_ring_buffer** in the search box, select 'all fields' at the bottom and hit search.
-when it finds the findction, dismiss the search box, click on the decompiler (c code) window and press CTRL+F, enter **malloc** and press 'next', it should find something like this:
-
+when it finds the function, dismiss the search box, click on the decompiler (c code) window and press CTRL+F, enter **malloc** and press 'next', it should find something like this:
+```
 varx = Malloc(__n);
 *(int *)(&DAT_0041a44c + vary) = varx;
-
+```
 That "DAT_0041a44c" is the address of the ring buffer for channel 0 (HD).
 For channel 1 (SD) the address is that + 0x13c, so it would be 41a44c+13c=41a588 which is where the address for the ring buffer for channel 1 (SD) is stored.
-For the buffer length it should be 12815366 for HD (1080p) or 1285126 for SD (the calculation is on that same function a few lines before the malloc but the parameters are set on a structure on a different function which you can find if you follow the code back from its references.
+For the buffer length it should be ```128*1536*6=1179648``` for HD (1080p) or ```128*512*6=393216``` for SD (the calculation is on that same function a few lines before the malloc but the parameters are set on a structure on a different function which you can find if you follow the code back from its references.
 
 
 
