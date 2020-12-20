@@ -139,6 +139,20 @@ Alternate method I used originally (more involved for people knowledgeable in li
 open a telnet, do a cat /proc/PID/maps (using the process ID of ppsapp listed on 'ps')
 for each memory block marked with 'rw' search for JPEG signature JFIF, then search for the file start marker FF D8 -- there will likely be one in the first few memory blocks and another further down the list which should be for the live feed (used in snap/mjpeg.cgi)
 
+#### IF YOU WANT TO GET PLAY.CGI WORKING:
+
+To find the request address for play.cgi:
+Click the middle window and then CTRL+HOME to get back up to the top of the listing, then press CTRL+SHIFT+E (search) enter **"talkTask"** (including quotes) in the search box, select 'all fields' at the bottom and hit search.
+It should find one function that looks like the below:
+
+![talkTask](https://raw.githubusercontent.com/guino/ppsapp-rtsp/main/img/talkTask.png)
+
+You should double click the function that is highlighted above (below the while line) which will bring you to a function that looks like this:
+
+![playaddr](https://raw.githubusercontent.com/guino/ppsapp-rtsp/main/img/playaddr.png)
+
+The highlighted address (in the first **if** line) is the address to use in play.cgi (in this case 0x00477404).
+
 #### ONLY IF YOU WANT TO PLAY WITH STREAMER-ARM
 To find the address for streamer-arm:
 Click the middle window and then CTRL+HOME to get back up to the top of the listing, then press CTRL+SHIFT+E (search) enter **ipc_ring_buffer** in the search box, select 'all fields' at the bottom and hit search.
