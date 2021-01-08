@@ -94,6 +94,8 @@ It should highlight a beq command on the middle window:
 
 This time we want to make sure that **return** is NEVER called, so we want to change that **beq** to nop (nothing/no operation) -- so right click the **beq** and select 'patch instruction', then delete the contents on both red boxes and enter just **nop** where it used to be **beq** (and hit enter):
 
+2.7.x NOTICE: In 2.7.x the code is slightly different and instead of NOP you may have to change the **beq** for just **b** in order to get the function to run normally -- you'll know you have to do this if inserting the NOP above causes the whole function to disappear on the right side (so you can just undo with CTRL+Z and try this instead).
+
 ![hdpatched](https://raw.githubusercontent.com/guino/ppsapp-rtsp/main/img/hdpatched.png)
 
 Now again we need to make the change in ppsapp-rtsp, so back to the hex editor this time on address e554c - 10000 = d554c
@@ -152,6 +154,8 @@ You should double click the function that is highlighted above (below the while 
 ![playaddr](https://raw.githubusercontent.com/guino/ppsapp-rtsp/main/img/playaddr.png)
 
 The highlighted address (in the first **if** line) is the address to use in play.cgi (in this case 0x00477404).
+
+See https://github.com/guino/BazzDoorbell/issues/10#issuecomment-748513226 on how to use play.cgi.
 
 #### ONLY IF YOU WANT TO PLAY WITH STREAMER-ARM
 To find the address for streamer-arm:
