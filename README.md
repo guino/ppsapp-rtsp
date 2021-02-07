@@ -157,6 +157,10 @@ The highlighted address (in the first **if** line) is the address to use in play
 
 See https://github.com/guino/BazzDoorbell/issues/10#issuecomment-748513226 on how to use play.cgi.
 
+#### LED Control
+
+By default ppsapp will control the blue+red LED of the camera to inducate boot/setup/connection status. If you just want to TURN OFF the LED you can simply edit tuya_config.json to set "light_onoff" to 0. If you wish to manually control the blue+red LED from command line or script you would need to patch your ppsapp so it no longer controls the LED. Instructions for doing this have been made and posted here: https://github.com/guino/BazzDoorbell/issues/9#issuecomment-774754011 -- also view a few comments above which indicate how to manually control the blue+red LED.
+
 #### ONLY IF YOU WANT TO PLAY WITH STREAMER-ARM
 To find the address for streamer-arm:
 Click the middle window and then CTRL+HOME to get back up to the top of the listing, then press CTRL+SHIFT+E (search) enter **ipc_ring_buffer** in the search box, select 'all fields' at the bottom and hit search.
